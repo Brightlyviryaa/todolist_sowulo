@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string("name");
             $table->text("description");
             $table->date("due_date");
+            $table->boolean("is_done");
             $table->foreignId("user_id")->constrained();
             $table->timestamps();
         });
