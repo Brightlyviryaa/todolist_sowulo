@@ -20,57 +20,57 @@
     <div class="container mx-auto">
         <nav class="bg-white flex justify-between items-center mt-11">
             <div>
-                <h1 class="text-3xl font-bold">To-do List</h1>
-                <h2 class="text-md">By Gerda SOWULO</h2>    
+                <h1 class="text-4xl font-bold">To-do List</h1>
+                <h2 class="text-lg">By Gerda SOWULO</h2>    
             </div>    
-            <p id="dateContainer" class="mr-4">Now: Thu, 28 Maret 2024</p>
-            <button class="bg-blue-400 text-white px-4 py-2 rounded-md">Log Out</button>  
+            <p id="dateContainer" class="mr-4 sm:p-5 text-lg">Now: Thu, 28 Maret 2024</p>
+            <button class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Log Out</button>  
         </nav>
 
-        <div class="mt-10">
+        <div class="mt-6">
             <div class="flex justify-between">
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-5">
                     <button class="bg-black rounded-full p-3">
                         <img src={{asset("images/plus.svg")}}>
                     </button>
-                    <h1 class="text-2xl font-medium">Add more task</h1>
-                    <h1 class="text-white bg-[#FD9A71] rounded-full p-3 aspect-square ml-9 text-lg font-medium">4</h1>
+                    <h1 class="text-xl font-medium">Add more task</h1>
+                    <h1 class="text-white bg-[#FD9A71] rounded-full p-3 ml-9 text-xl">4</h1>
                 </div>
             </div>
         </div>
 
-        <div class="mt-12 grid grid-cols-4 gap-8">
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="p-5 bg-[#FD9A71] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
-                <h3 class="text-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
+                <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
                 <div class="mt-14 flex gap-12 items-center">
-                    <p class="text-sm">29 March, 2024</p>
+                    <p class="text-base">29 March, 2024</p>
                     <button class="bg-black rounded-full p-3">
                         <img src={{asset("images/pencil.svg")}}>
                     </button> 
                 </div>
             </div>
             <div class="p-5 bg-[#FEC870] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
-                <h3 class="text-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
+                <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
                 <div class="mt-14 flex gap-12 items-center">
-                    <p class="text-sm">29 March, 2024</p>
+                    <p class="text-base">29 March, 2024</p>
                     <button class="bg-black rounded-full p-3">
                         <img src={{asset("images/pencil.svg")}}>
                     </button> 
                 </div>
             </div>
             <div class="p-5 bg-[#E3ED8D] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
-                <h3 class="text-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
+                <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
                 <div class="mt-14 flex gap-12 items-center">
-                    <p class="text-sm">29 March, 2024</p>
+                    <p class="text-base">29 March, 2024</p>
                     <button class="bg-black rounded-full p-3">
                         <img src={{asset("images/pencil.svg")}}>
                     </button> 
                 </div>
             </div>
             <div class="p-5 bg-[#E3ED8D] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
-                <h3 class="text-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
+                <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
                 <div class="mt-14 flex gap-12 items-center">
-                    <p class="text-sm">29 March, 2024</p>
+                    <p class="text-base">29 March, 2024</p>
                     <button class="bg-black rounded-full p-3">
                         <img src={{asset("images/pencil.svg")}}>
                     </button> 
