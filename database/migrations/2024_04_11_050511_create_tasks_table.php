@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->id("Task ID");
+            $table->id(); //id gak perlu di ganti ganti nama table nya
             $table->timestamps();
-            $table->string("Name");
-            $table->string("Description");
-            $table->date("Due Date");
+            $table->string("name");
+            $table->string("description");
+            $table->date("due date");
             $table->foreignId("User ID")->constrained("users");
         });
 
