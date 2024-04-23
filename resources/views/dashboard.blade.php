@@ -15,26 +15,26 @@
         </div>
     </div>
 </x-app-layout> --}}
-@extends("layouts.base")
-@section("content")
+@extends('layouts.base')
+@section('content')
     <div class="container mx-auto px-4">
         <nav class="bg-white flex md:justify-between justify-center items-center mt-11 md:flex-row flex-col">
             <div class="sm:mb-0 mb-4">
                 <h1 class="text-4xl font-bold md:text-start text-center">To-do List</h1>
-                <h2 class="text-lg md:text-start text-center">By Gerda SOWULO</h2>    
-            </div>    
+                <h2 class="text-lg md:text-start text-center">By Gerda SOWULO</h2>
+            </div>
             <p id="dateContainer" class="md:mr-4 mr-0 sm:p-5 text-lg text-center sm:mb-0 mb-4">Now: Thu, 28 Maret 2024</p>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Log Out</button>
-            </form> 
+            </form>
         </nav>
 
         <div class="mt-6">
             <div class="flex justify-between">
                 <div class="flex items-center gap-5">
                     <button class="bg-black rounded-full p-3">
-                        <img src={{asset("images/plus.svg")}}>
+                        <img src={{ asset('images/plus.svg') }}>
                     </button>
                     <h1 class="text-xl font-medium">Add more task</h1>
                     <h1 class="text-white bg-[#FD9A71] rounded-full p-3 ml-9 text-xl">4</h1>
@@ -49,8 +49,8 @@
                     <div class="mt-14 flex gap-12 items-center">
                         <p class="text-base">29 March, 2024</p>
                         <button class="bg-black rounded-full p-3">
-                            <img src={{asset("images/pencil.svg")}}>
-                        </button> 
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -60,8 +60,8 @@
                     <div class="mt-14 flex gap-12 items-center">
                         <p class="text-base">29 March, 2024</p>
                         <button class="bg-black rounded-full p-3">
-                            <img src={{asset("images/pencil.svg")}}>
-                        </button> 
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -71,8 +71,8 @@
                     <div class="mt-14 flex gap-12 items-center">
                         <p class="text-base">29 March, 2024</p>
                         <button class="bg-black rounded-full p-3">
-                            <img src={{asset("images/pencil.svg")}}>
-                        </button> 
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -82,23 +82,23 @@
                     <div class="mt-14 flex gap-12 items-center">
                         <p class="text-base">29 March, 2024</p>
                         <button class="bg-black rounded-full p-3">
-                            <img src={{asset("images/pencil.svg")}}>
-                        </button> 
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script>
         // Now: Thu, 28 Maret 2024
         let date = new Date();
-        
+
         const dateContainer = document.querySelector("#dateContainer");
 
         let day
-        switch(date.getDay()){
-            case 0: 
+        switch (date.getDay()) {
+            case 0:
                 day = "Minggu"
                 break
             case 1:
@@ -118,11 +118,11 @@
                 break
             case 6:
                 day = "Sabtu"
-                break                    
+                break
         }
 
         let month
-        switch(date.getMonth()){
+        switch (date.getMonth()) {
             case 0:
                 month = "Januari"
                 break
@@ -134,7 +134,7 @@
                 break
             case 3:
                 month = "April"
-                break  
+                break
             case 4:
                 month = "Mei"
                 break
@@ -157,12 +157,11 @@
                 month = "November"
                 break
             case 11:
-                month = "Desember"         
-                break                                 
+                month = "Desember"
+                break
         }
 
         let dateString = "Now: " + day + ", " + date.getDate() + " " + month + " " + date.getFullYear();
         dateContainer.innerHTML = dateString;
-
     </script>
 @endsection
