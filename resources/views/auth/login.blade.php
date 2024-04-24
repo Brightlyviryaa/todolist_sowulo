@@ -54,10 +54,8 @@
                 <h2 class="text-lg md:text-start text-center">By Gerda SOWULO</h2>    
             </div>    
             <p id="dateContainer" class="md:mr-4 mr-0 sm:p-5 text-lg text-center sm:mb-0 mb-4">Now: Thu, 28 Maret 2024</p>
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <button type="submit" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Register</button>
-            </form> 
+            
+            <a href="{{ route('register')}}" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Register</a>
         </nav>
         <div class="container mx-auto mt-20 p-5 lg:px-96 lg:pt-52 lg:pb-80 lg:mt-0">
             <div class="bg-white px-8 py-4 border-2 rounded-2xl border-[#616161] drop-shadow">

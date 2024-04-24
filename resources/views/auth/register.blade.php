@@ -59,15 +59,12 @@
                 <h2 class="text-lg md:text-start text-center">By Gerda SOWULO</h2>    
             </div>    
             <p id="dateContainer" class="md:mr-4 mr-0 sm:p-5 text-lg text-center sm:mb-0 mb-4">Now: Thu, 28 Maret 2024</p>
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <button type="submit" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Login</button>
-            </form> 
+            <a href="{{ route('login')}}" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Login</a>
         </nav>
         <div class="container mx-auto mt-20 p-5 lg:px-96 lg:pt-52 lg:pb-80 lg:mt-0">
             <div class="bg-white px-8 pb-8 border rounded-2xl border-[#616161] drop-shadow">
-                <h1 class="font-bold text-4xl mb-4">Register</h1>
-                <form>
+                <h1 class="font-bold text-4xl mb-4 pt-4">Register</h1>
+                <form method="POST" action="{{ route('register') }}">
                     <div class="mb-3.5">
                         <label class="block text-gray-700 mb-1 text-lg">Username</label>
                         <input type="text" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required> 
