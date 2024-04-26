@@ -1,4 +1,5 @@
-{{-- <x-guest-layout>
+{{--
+<x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -49,7 +50,8 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout> --}}
+</x-guest-layout>--}}
+
 @extends("layouts.base")
 @section("content")
     <div class="container mx-auto">
@@ -65,21 +67,22 @@
             <div class="bg-white px-8 pb-8 border rounded-2xl border-[#616161] drop-shadow">
                 <h1 class="font-bold text-4xl mb-4 pt-4">Register</h1>
                 <form method="POST" action="{{ route('register') }}">
+                    @csrf
                     <div class="mb-3.5">
                         <label class="block text-gray-700 mb-1 text-lg">Username</label>
-                        <input type="text" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required> 
+                        <input type="text" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" name="name" required> 
                     </div>
                     <div class="mb-3.5">
                         <label for="email" class="block text-gray-700 mb-1 text-lg">Email</label>
-                        <input type="email" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required> 
+                        <input type="email" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" name="email" required> 
                     </div>
                     <div class="mb-3.5">
                         <label for="password" class="block text-gray-700 mb-1 text-lg">Password</label>
-                        <input type="password" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required> 
+                        <input type="password" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" name="password" required> 
                     </div>
                     <div class="mb-3.5">
                         <label for="password" class="block text-gray-700 mb-1 text-lg">Re type password</label>
-                        <input type="password" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required> 
+                        <input type="password" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" name="password_confirmation" required> 
                     </div>
                     <button type="submit" class="rounded-lg bg-[#00AFE7] text-white px-4 py-2">
                         <p class="text-lg px-3 py-1">Submit</p>
