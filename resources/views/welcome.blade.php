@@ -2,47 +2,48 @@
     @section('content')
         <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
         <div class="container mx-auto">
-            <nav class="bg-white flex md:justify-between justify-center items-center mt-11 md:flex-row flex-col md:p-5">
-                <div class="sm:mb-0 mb-4">
-                    <h1 class="text-4xl font-bold md:text-start text-center">To-do List</h1>
-                    <h2 class="text-lg md:text-start text-center">By Gerda SOWULO</h2>
+            <nav class="mt-11 flex flex-col items-center justify-center bg-white md:flex-row md:justify-between md:p-5">
+                <div class="mb-4 sm:mb-0">
+                    <h1 class="text-center text-4xl font-bold md:text-start">To-do List</h1>
+                    <h2 class="text-center text-lg md:text-start">By Gerda SOWULO</h2>
                 </div>
-                <p id="dateContainer" class="md:mr-4 mr-0 sm:p-5 text-lg text-center sm:mb-0 mb-4">Now: Thu, 28 Maret 2024</p>
+                <p id="dateContainer" class="mb-4 mr-0 text-center text-lg sm:mb-0 sm:p-5 md:mr-4">Now: Thu, 28 Maret 2024</p>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <button type="submit"
-                        class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Login</button>
+                        class="rounded-lg bg-[#00AFE7] px-5 py-3 text-lg text-white sm:p-5">Login</button>
                 </form>
             </nav>
-            <div class="container mx-auto mt-20 p-5 lg:px-96 lg:pt-52 lg:pb-80 lg:mt-0">
-                <div class="bg-white px-8 pb-8 border rounded-2xl border-[#616161] drop-shadow">
+            <div class="container mx-auto mt-20 p-5 lg:mt-0 lg:px-96 lg:pb-80 lg:pt-52">
+                <div class="rounded-2xl border border-[#616161] bg-white px-8 pb-8 drop-shadow">
 
-                    <h1 class="font-bold text-4xl mb-4 mr-4">Create</h1>
+                    <h1 class="mb-4 mr-4 text-4xl font-bold">Create</h1>
                     <form>
+                        @csrf
                         <div class="mb-3.5">
 
                         </div>
                         <div class="mb-3.5">
-                            <label for="textarea" class="block text-gray-700 mb-1 text-lg">Judul</label>
+                            <label for="textarea" class="mb-1 block text-lg text-gray-700">Judul</label>
                             <input type="textarea"
-                                class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required>
+                                class="form-input w-full rounded-md border border-gray-300 p-2 drop-shadow" required>
                         </div>
                         <div class="mb-3.5">
-                            <label for="date" class="block text-gray-700 mb-1 text-lg">Deadline</label>
+                            <label for="date" class="mb-1 block text-lg text-gray-700">Deadline</label>
                             <input type="date"
-                                class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required>
+                                class="form-input w-full rounded-md border border-gray-300 p-2 drop-shadow" required>
                         </div>
                         <div class="mb-3.5">
-                            <label for="textarea" class="block text-gray-700 mb-1 text-lg">deskripsi</label>
+                            <label for="textarea" class="mb-1 block text-lg text-gray-700">deskripsi</label>
                             <div id="editor">
                                 <input type="textarea"
-                                    class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required>
+                                    class="form-input w-full rounded-md border border-gray-300 p-2 drop-shadow" required>
                             </div>
                         </div>
-                        <div class="col-span-1 flex justify-center items-center mt-3">
-                            <div class="bg-[#00AFE7] px-auto rounded-[10px]">
-                                <button type="submit" class="rounded-lg bg-[#00AFE7] text-white px-4 py-2">
-                                    <p class="text-lg px-3 py-1">Submit</p>
+                        <div class="col-span-1 mt-3 flex items-center justify-center">
+                            <div class="px-auto rounded-[10px] bg-[#00AFE7]">
+                                <button type="submit" class="rounded-lg bg-[#00AFE7] px-4 py-2 text-white">
+                                    <p class="px-3 py-1 text-lg">Submit</p>
                                 </button>
                             </div>
                         </div>
