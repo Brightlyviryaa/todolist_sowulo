@@ -30,7 +30,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('tasks.create');
+        return view('create-to-do');
     }
 
     /**
@@ -43,18 +43,18 @@ class TaskController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => 'required',
             'due_date' => 'required|date',
         ]);
 
-        $task = new Task;
-        $task->name = $request->name;
-        $task->description = $request->description;
-        $task->due_date = $request->due_date;
-        $task->User_ID = Auth::id(); // Set the user ID for the currently authenticated user
-        $task->save();
+        // $task = new Task;
+        // $task->name = $request->name;
+        // $task->description = $request->description;
+        // $task->due_date = $request->due_date;
+        // $task->User_ID = Auth::id(); // Set the user ID for the currently authenticated user
+        // $task->save();
 
-        return redirect()->route('tasks.index')->with('success', 'Task created successfully!');
+        return view('dashboard');
     }
 
     /**
@@ -68,11 +68,11 @@ class TaskController extends Controller
         $task = Task::findOrFail($id);
 
         // Check if the task belongs to the currently authenticated user
-        if ($task->User_ID !== Auth::id()) {
+        if ($task['User ID'] !== Auth::id()) {
             abort(403, 'Unauthorized');
         }
 
-        return view('tasks.show', compact('task'));
+        return view('view-to-do', compact('task'));
     }
 
     /**
@@ -86,11 +86,11 @@ class TaskController extends Controller
         $task = Task::findOrFail($id);
 
         // Check if the task belongs to the currently authenticated user
-        if ($task->User_ID !== Auth::id()) {
+        if ($task['User ID'] !== Auth::id()) {
             abort(403, 'Unauthorized');
         }
 
-        return view('tasks.edit', compact('task'));
+        return view('edit-to-do', compact('task'));
     }
 
     /**

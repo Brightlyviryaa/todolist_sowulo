@@ -33,11 +33,11 @@
         <div class="mt-6">
             <div class="flex justify-between">
                 <div class="flex items-center gap-5">
-                    <button class="bg-black rounded-full p-3">
+                    <a href="{{ route('tasks.create') }}" class="bg-black rounded-full p-3">
                         <img src={{asset("images/plus.svg")}}>
-                    </button>
+                    </a>
                     <h1 class="text-xl font-medium">Add more task</h1>
-                    <h1 class="text-white bg-[#FD9A71] rounded-full p-3 ml-9 text-xl">
+                    <h1 class="text-white bg-[#FD9A71] p-1 px-2 rounded-full text-xl ">
                         {{ count($tasks) }}
                     </h1>
                 </div>
