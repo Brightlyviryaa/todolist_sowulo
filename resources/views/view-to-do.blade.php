@@ -15,8 +15,8 @@
         <div class="container mx-auto mt-20 p-5 lg:px-96 lg:pt-52 lg:pb-80 lg:mt-0">
             <div class="bg-white px-8 py-4 border-2 rounded-2xl border-[#616161] drop-shadow">
                 <h1 class="font-bold text-4xl mb-4">{{ $task->name }} </h1>
-                <p class="text-sm">Open: {{ \Carbon\Carbon::parse($task['created_at'])->format('d F Y'); }} </p>
-                <p class="text-sm">Due: {{ \Carbon\Carbon::parse($task['due date'])->format('d F Y'); }}</p>
+                <p class="text-sm">Open: {{ \Carbon\Carbon::parse($task['created_at'])->format('d F Y') }} </p>
+                <p class="text-sm">Due: {{ \Carbon\Carbon::parse($task['due date'])->format('d F Y') }}</p>
             </div>
 
             <button type="submit" class="rounded-lg bg-white border border-gray-300 text-[#00AFE7] px-5 py-3">
