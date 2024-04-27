@@ -33,7 +33,7 @@
                             value="{{ $task['due date'] }}" name="due_date" required>
                     </div>
                     <div class="mb-3.5">
-                        <label for="textarea" class="block text-gray-700 mb-1 text-lg">deskripsi</label>
+                        <label for="textarea" class="block text-gray-700 mb-1 text-lg">Deskripsi</label>
                         <div id="editor"></div>
                         <input type="hidden" name="description" id="hiddenArea">
                     </div>
@@ -66,7 +66,7 @@
             theme: 'snow'
         });
 
-        quill.insertEmbed(0, 'text', <?php echo json_encode($task->description); ?>);
+        quill.root.innerHTML = "{{ $task->description }}";
 
         var form = document.querySelector(".create-to-do-form");
         var hiddenInput = document.querySelector('#hiddenArea');

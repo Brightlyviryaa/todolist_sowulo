@@ -32,7 +32,7 @@
                             class="form-input w-full rounded-md border border-gray-300 p-2 drop-shadow" name="due_date" required>
                     </div>
                     <div class="mb-3.5">
-                        <label for="textarea" class="mb-1 block text-lg text-gray-700">deskripsi</label>
+                        <label for="textarea" class="mb-1 block text-lg text-gray-700">Deskripsi</label>
                         <div id="editor"></div>
                         <input type="hidden" name="description" id="hiddenArea">   
                     </div>

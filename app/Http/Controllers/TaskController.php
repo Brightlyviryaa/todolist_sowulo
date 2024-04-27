@@ -133,6 +133,6 @@ class TaskController extends Controller
     {
         Task::destroy($id);
 
-        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
+        return redirect()->route('dashboard')->with('success', 'Task deleted successfully!');
     }
 }
