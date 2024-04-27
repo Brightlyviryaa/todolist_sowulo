@@ -3,8 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/addtodo', function () {
+    return view('todo.addtodo');
 });
 
 Route::get('/dashboard', function () {
