@@ -43,18 +43,18 @@ class TaskController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'required',
+            'description' => 'required|string',
             'due_date' => 'required|date',
         ]);
 
-        // $task = new Task;
-        // $task->name = $request->name;
-        // $task->description = $request->description;
-        // $task->due_date = $request->due_date;
-        // $task->User_ID = Auth::id(); // Set the user ID for the currently authenticated user
-        // $task->save();
+        $task = new Task;
+        $task->name = $request->name;
+        $task->description = $request->description;
+        $task['due date'] = $request->due_date;
+        $task['User ID'] = Auth::id(); // Set the user ID for the currently authenticated user
+        $task->save();
 
-        return view('dashboard');
+        return redirect()->route('dashboard')->with('success', 'Task added successfully!');
     }
 
     /**
@@ -111,16 +111,16 @@ class TaskController extends Controller
         $task = Task::findOrFail($id);
 
         // Check if the task belongs to the currently authenticated user
-        if ($task->User_ID !== Auth::id()) {
+        if ($task['User ID'] !== Auth::id()) {
             abort(403, 'Unauthorized');
         }
 
         $task->name = $request->name;
         $task->description = $request->description;
-        $task->due_date = $request->due_date;
+        $task['due date'] = $request->due_date;
         $task->save();
 
-        return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
+        return redirect()->route('dashboard')->with('success', 'Task updated successfully!');
     }
 
     /**

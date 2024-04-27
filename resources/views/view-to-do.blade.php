@@ -25,7 +25,7 @@
             <button type="submit" class="rounded-lg bg-white border border-gray-300 text-[#00AFE7] px-5 py-3">
                 <a href="{{ route('tasks.edit', ['id' => $task->id]) }}" class="text-sm">Edit</a>
             </button>
-            <p>{{$task->description}}</p>
+            <div>{!! $task->description !!}</div>
 
             </form>
         </div>

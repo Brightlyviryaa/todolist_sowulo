@@ -17,7 +17,7 @@
             <div class="rounded-2xl border border-[#616161] bg-white px-8 pb-8 drop-shadow">
 
                 <h1 class="mb-4 mr-4 text-4xl font-bold">Create</h1>
-                <form action="POST" action="{{ route('tasks.store') }}" id="identifier">
+                <form method="POST" action="{{ route('tasks.store') }}" id="identifier" class="create-to-do-form">
                     @csrf
                     <div class="mb-3.5">
                     </div>
@@ -33,9 +33,8 @@
                     </div>
                     <div class="mb-3.5">
                         <label for="textarea" class="mb-1 block text-lg text-gray-700">deskripsi</label>
-                        <div id="editor">
-                            <textarea name="description" id="hiddenArea" class="form-input w-full rounded-md border border-gray-300 p-2 drop-shadow" required></textarea>
-                        </div>
+                        <div id="editor"></div>
+                        <input type="hidden" name="description" id="hiddenArea">   
                     </div>
                     <div class="col-span-1 mt-3 flex items-center justify-center">
                         <div class="px-auto rounded-[10px] bg-[#00AFE7]">
@@ -54,24 +53,19 @@
         const quill = new Quill('#editor', {
             modules: {
                 toolbar: [
-                    [{
-                        header: [1, 2, false]
-                    }],
                     ['bold', 'italic', 'underline'],
-                    ['image', 'code-block'],
+                    ['code-block'],
                 ],
             },
             placeholder: 'Compose an epic...',
             theme: 'snow', // or 'bubble'
         });
 
-        const form = document.getElementById('identifier');
-        const editor = document.getElementById('editor');
-        const hiddenArea = document.getElementById('hiddenArea');
+        var form = document.querySelector(".create-to-do-form");
+        var hiddenInput = document.querySelector('#hiddenArea');
 
-        form.addEventListener('submit', function(event) {
-            // Set nilai input tersembunyi dengan konten Quill
-            hiddenArea.value = editor.querySelector('.ql-editor').innerHTML;
+        form.addEventListener('submit', function(e){
+            hiddenInput.value = quill.root.innerHTML;
         });
     </script>
     @include('components.dateLogic')

@@ -17,26 +17,25 @@
             <div class="bg-white px-8 pb-8 border rounded-2xl border-[#616161] drop-shadow">
 
                 <h1 class="font-bold text-4xl mb-4 mr-4">Edit Task</h1>
-                <form>
+                <form method="POST" action="{{ route('tasks.update', ['id' => $task->id]) }}" id="identifier" class="create-to-do-form">
+                    @csrf
+                    @method('PUT')
                     <div class="mb-3.5">
-
                     </div>
                     <div class="mb-3.5">
                         <label for="judul" class="block text-gray-700 mb-1 text-lg">Judul</label>
                         <input type="textarea" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow"
-                            placeholder="To do list tutor gapot sowulo" value="{{ $task->name }}" required>
+                            placeholder="To do list tutor gapot sowulo" value="{{ $task->name }}" name="name" required>
                     </div>
                     <div class="mb-3.5">
                         <label for="date" class="block text-gray-700 mb-1 text-lg">Deadline</label>
                         <input type="date" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow"
-                            value="{{ $task['due date'] }}" required>
+                            value="{{ $task['due date'] }}" name="due_date" required>
                     </div>
                     <div class="mb-3.5">
                         <label for="textarea" class="block text-gray-700 mb-1 text-lg">deskripsi</label>
-                        <div id="editor">
-                            <input type="textarea"
-                                class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" value="{{ $task->description }}" required>
-                        </div>
+                        <div id="editor"></div>
+                        <input type="hidden" name="description" id="hiddenArea">
                     </div>
                     <div class="col-span-1 flex justify-center items-center mt-3">
                         <div class="bg-[#00AFE7] px-auto rounded-[10px]">
@@ -68,6 +67,13 @@
         });
 
         quill.insertEmbed(0, 'text', <?php echo json_encode($task->description); ?>);
+
+        var form = document.querySelector(".create-to-do-form");
+        var hiddenInput = document.querySelector('#hiddenArea');
+
+        form.addEventListener('submit', function(e){
+            hiddenInput.value = quill.root.innerHTML;
+        });
     </script>
 
     @include('components.dateLogic')
