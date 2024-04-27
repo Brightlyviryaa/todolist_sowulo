@@ -5,7 +5,7 @@ use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('todo.createtodo');
+    return view('welcome');
 });
 
 Route::get('/dashboard', [TaskController::class, 'index'])
