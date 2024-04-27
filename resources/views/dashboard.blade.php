@@ -33,55 +33,55 @@
         <div class="mt-6">
             <div class="flex justify-between">
                 <div class="flex items-center gap-5">
-                    <button class="bg-black rounded-full p-3">
+                    <button class="rounded-full bg-black p-3">
                         <img src={{ asset('images/plus.svg') }}>
                     </button>
                     <h1 class="text-xl font-medium">Add more task</h1>
-                    <h1 class="text-white bg-[#FD9A71] rounded-full p-3 ml-9 text-xl">4</h1>
+                    <h1 class="ml-9 rounded-full bg-[#FD9A71] p-3 text-xl text-white">4</h1>
                 </div>
             </div>
         </div>
 
-        <div class="mt-12 sm:mr-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="mt-12 grid grid-cols-1 gap-8 sm:mr-0 sm:grid-cols-2 lg:grid-cols-4">
             <div class="flex justify-center">
-                <div class="p-5 bg-[#FD9A71] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
+                <div class="flex h-64 w-64 flex-col justify-between rounded-3xl bg-[#FD9A71] p-5 px-5 py-4">
                     <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
-                    <div class="mt-14 flex gap-12 items-center">
+                    <div class="mt-14 flex items-center gap-12">
                         <p class="text-base">29 March, 2024</p>
-                        <button class="bg-black rounded-full p-3">
+                        <button class="rounded-full bg-black p-3">
                             <img src={{ asset('images/pencil.svg') }}>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center">
-                <div class="p-5 bg-[#FEC870] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
+                <div class="flex h-64 w-64 flex-col justify-between rounded-3xl bg-[#FEC870] p-5 px-5 py-4">
                     <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
-                    <div class="mt-14 flex gap-12 items-center">
+                    <div class="mt-14 flex items-center gap-12">
                         <p class="text-base">29 March, 2024</p>
-                        <button class="bg-black rounded-full p-3">
+                        <button class="rounded-full bg-black p-3">
                             <img src={{ asset('images/pencil.svg') }}>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center">
-                <div class="p-5 bg-[#E3ED8D] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
+                <div class="flex h-64 w-64 flex-col justify-between rounded-3xl bg-[#E3ED8D] p-5 px-5 py-4">
                     <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
-                    <div class="mt-14 flex gap-12 items-center">
+                    <div class="mt-14 flex items-center gap-12">
                         <p class="text-base">29 March, 2024</p>
-                        <button class="bg-black rounded-full p-3">
+                        <button class="rounded-full bg-black p-3">
                             <img src={{ asset('images/pencil.svg') }}>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center">
-                <div class="p-5 bg-[#E3ED8D] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
+                <div class="flex h-64 w-64 flex-col justify-between rounded-3xl bg-[#E3ED8D] p-5 px-5 py-4">
                     <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
-                    <div class="mt-14 flex gap-12 items-center">
+                    <div class="mt-14 flex items-center gap-12">
                         <p class="text-base">29 March, 2024</p>
-                        <button class="bg-black rounded-full p-3">
+                        <button class="rounded-full bg-black p-3">
                             <img src={{ asset('images/pencil.svg') }}>
                         </button>
                     </div>
