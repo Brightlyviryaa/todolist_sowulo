@@ -31,6 +31,14 @@
                 malesuada. Non blandit viverra magna velit ullamcorper. Feugiat quis sollicitudin sit pharetra viverra.
                 Velit mollis ut iaculis leo venenatis.</p>
 
+            <div class="col-span-1 mt-3 flex items-center justify-center">
+                <div class="px-auto rounded-[10px] bg-[#00AFE7]">
+                    <button type="submit" class="rounded-lg bg-[#00AFE7] px-4 py-2 text-white">
+                        <p class="px-3 py-1 text-lg">edit task</p>
+                    </button>
+                </div>
+            </div>
+
 
         </div>
     </div>
