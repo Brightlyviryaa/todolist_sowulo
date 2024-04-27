@@ -15,12 +15,13 @@
 
     $dueDate = \Carbon\Carbon::parse($task['due date'])->format('d F, Y');
 
-    $task->description = Str::limit($task->description, 120);
+    $task->name = Str::limit($task->name, 120);
+    $task->name = wordwrap($task->name, 20, "<br>", true);
 @endphp
 
 <div class="flex justify-center">
     <div class="{{ $taskColor }}  p-5 rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
-        <p class="text-xl break-all">{{ $task->description }}</p>
+        <p class="text-xl break-all">{!! $task->name !!}</p>
         <div class="mt-auto flex gap-12 items-center">
             <p class="text-base">{{ $dueDate }}</p>
             <a href="{{ route('tasks.show', ['id' => $task->id]) }}" class="bg-black rounded-full p-3 ms-4">

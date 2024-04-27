@@ -8,11 +8,10 @@
                 <h2 class="text-center text-lg md:text-start">By Gerda SOWULO</h2>
             </div>
             <p id="dateContainer" class="mb-4 mr-0 text-center text-lg sm:mb-0 sm:p-5 md:mr-4">Now: Thu, 28 Maret 2024</p>
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit"
-                    class="rounded-lg bg-[#00AFE7] px-5 py-3 text-lg text-white sm:p-5">Login</button>
-            </form>
+                <button type="submit" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Log Out</button>
+            </form> 
         </nav>
         <div class="container mx-auto mt-20 p-5 lg:mt-0 lg:px-96 lg:pb-80 lg:pt-52">
             <div class="rounded-2xl border border-[#616161] bg-white px-8 pb-8 drop-shadow">
@@ -36,7 +35,6 @@
                         <label for="textarea" class="mb-1 block text-lg text-gray-700">deskripsi</label>
                         <div id="editor">
                             <textarea name="description" id="hiddenArea" class="form-input w-full rounded-md border border-gray-300 p-2 drop-shadow" required></textarea>
-                            <input type="hidden" name="description" id="hiddenArea">
                         </div>
                     </div>
                     <div class="col-span-1 mt-3 flex items-center justify-center">
@@ -67,8 +65,13 @@
             theme: 'snow', // or 'bubble'
         });
 
-        $("#identifier").on("submit",function() {
-            $("#hiddenArea").val($("#editor").html());
+        const form = document.getElementById('identifier');
+        const editor = document.getElementById('editor');
+        const hiddenArea = document.getElementById('hiddenArea');
+
+        form.addEventListener('submit', function(event) {
+            // Set nilai input tersembunyi dengan konten Quill
+            hiddenArea.value = editor.querySelector('.ql-editor').innerHTML;
         });
     </script>
     @include('components.dateLogic')
