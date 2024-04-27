@@ -15,90 +15,90 @@
         </div>
     </div>
 </x-app-layout> --}}
-@extends("layouts.base")
-@section("content")
+@extends('layouts.base')
+@section('content')
     <div class="container mx-auto px-4">
-        <nav class="bg-white flex md:justify-between justify-center items-center mt-11 md:flex-row flex-col">
-            <div class="sm:mb-0 mb-4">
-                <h1 class="text-4xl font-bold md:text-start text-center">To-do List</h1>
-                <h2 class="text-lg md:text-start text-center">By Gerda SOWULO</h2>    
-            </div>    
-            <p id="dateContainer" class="md:mr-4 mr-0 sm:p-5 text-lg text-center sm:mb-0 mb-4">Now: Thu, 28 Maret 2024</p>
+        <nav class="mt-11 flex flex-col items-center justify-center bg-white md:flex-row md:justify-between">
+            <div class="mb-4 sm:mb-0">
+                <h1 class="text-center text-4xl font-bold md:text-start">To-do List</h1>
+                <h2 class="text-center text-lg md:text-start">By Gerda SOWULO</h2>
+            </div>
+            <p id="dateContainer" class="mb-4 mr-0 text-center text-lg sm:mb-0 sm:p-5 md:mr-4">Now: Thu, 28 Maret 2024</p>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Log Out</button>
-            </form> 
+                <button type="submit" class="rounded-lg bg-[#00AFE7] px-5 py-3 text-lg text-white sm:p-5">Log Out</button>
+            </form>
         </nav>
 
         <div class="mt-6">
             <div class="flex justify-between">
                 <div class="flex items-center gap-5">
-                    <button class="bg-black rounded-full p-3">
-                        <img src={{asset("images/plus.svg")}}>
+                    <button class="rounded-full bg-black p-3">
+                        <img src={{ asset('images/plus.svg') }}>
                     </button>
                     <h1 class="text-xl font-medium">Add more task</h1>
-                    <h1 class="text-white bg-[#FD9A71] rounded-full p-3 ml-9 text-xl">4</h1>
+                    <h1 class="ml-9 rounded-full bg-[#FD9A71] p-3 text-xl text-white">4</h1>
                 </div>
             </div>
         </div>
 
-        <div class="mt-12 sm:mr-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="mt-12 grid grid-cols-1 gap-8 sm:mr-0 sm:grid-cols-2 lg:grid-cols-4">
             <div class="flex justify-center">
-                <div class="p-5 bg-[#FD9A71] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
+                <div class="flex h-64 w-64 flex-col justify-between rounded-3xl bg-[#FD9A71] p-5 px-5 py-4">
                     <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
-                    <div class="mt-14 flex gap-12 items-center">
+                    <div class="mt-14 flex items-center gap-12">
                         <p class="text-base">29 March, 2024</p>
-                        <button class="bg-black rounded-full p-3">
-                            <img src={{asset("images/pencil.svg")}}>
-                        </button> 
+                        <button class="rounded-full bg-black p-3">
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center">
-                <div class="p-5 bg-[#FEC870] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
+                <div class="flex h-64 w-64 flex-col justify-between rounded-3xl bg-[#FEC870] p-5 px-5 py-4">
                     <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
-                    <div class="mt-14 flex gap-12 items-center">
+                    <div class="mt-14 flex items-center gap-12">
                         <p class="text-base">29 March, 2024</p>
-                        <button class="bg-black rounded-full p-3">
-                            <img src={{asset("images/pencil.svg")}}>
-                        </button> 
+                        <button class="rounded-full bg-black p-3">
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center">
-                <div class="p-5 bg-[#E3ED8D] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
+                <div class="flex h-64 w-64 flex-col justify-between rounded-3xl bg-[#E3ED8D] p-5 px-5 py-4">
                     <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
-                    <div class="mt-14 flex gap-12 items-center">
+                    <div class="mt-14 flex items-center gap-12">
                         <p class="text-base">29 March, 2024</p>
-                        <button class="bg-black rounded-full p-3">
-                            <img src={{asset("images/pencil.svg")}}>
-                        </button> 
+                        <button class="rounded-full bg-black p-3">
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center">
-                <div class="p-5 bg-[#E3ED8D] rounded-3xl px-5 py-4 w-64 h-64 flex justify-between flex-col">
+                <div class="flex h-64 w-64 flex-col justify-between rounded-3xl bg-[#E3ED8D] p-5 px-5 py-4">
                     <h3 class="text-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, magni.</h3>
-                    <div class="mt-14 flex gap-12 items-center">
+                    <div class="mt-14 flex items-center gap-12">
                         <p class="text-base">29 March, 2024</p>
-                        <button class="bg-black rounded-full p-3">
-                            <img src={{asset("images/pencil.svg")}}>
-                        </button> 
+                        <button class="rounded-full bg-black p-3">
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script>
         // Now: Thu, 28 Maret 2024
         let date = new Date();
-        
+
         const dateContainer = document.querySelector("#dateContainer");
 
         let day
-        switch(date.getDay()){
-            case 0: 
+        switch (date.getDay()) {
+            case 0:
                 day = "Minggu"
                 break
             case 1:
@@ -118,11 +118,11 @@
                 break
             case 6:
                 day = "Sabtu"
-                break                    
+                break
         }
 
         let month
-        switch(date.getMonth()){
+        switch (date.getMonth()) {
             case 0:
                 month = "Januari"
                 break
@@ -134,7 +134,7 @@
                 break
             case 3:
                 month = "April"
-                break  
+                break
             case 4:
                 month = "Mei"
                 break
@@ -157,12 +157,11 @@
                 month = "November"
                 break
             case 11:
-                month = "Desember"         
-                break                                 
+                month = "Desember"
+                break
         }
 
         let dateString = "Now: " + day + ", " + date.getDate() + " " + month + " " + date.getFullYear();
         dateContainer.innerHTML = dateString;
-
     </script>
 @endsection
