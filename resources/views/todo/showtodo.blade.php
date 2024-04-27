@@ -27,9 +27,22 @@
             <p class="text-sm mt-2">Open: 28 Maret 2024</p>
             <p class="text-sm mt-1">Due: 1 May 2024</p>
 
-            <button type="submit" class="rounded-lg bg-white border border-gray-300 text-[#00AFE7] px-5 py-3 mt-6">
-                <p class="text-sm">Mark As Done</p>
-            </button>
+
+
+            <div class="mt-6">
+                <div class="flex justify-between items-center gap-5">
+                    <div class="flex items-center gap-5">
+                        <button type="submit" class="rounded-lg bg-white border border-gray-300 text-[#00AFE7] px-5 py-3">
+                            <p class="text-sm">Mark As Done</p>
+                        </button>
+                        <button class=" rounded-full p-1">
+                            <img src={{ asset('images/delet.svg') }}>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
 
             <pre class="mt-6 mb-6">
 <strong>Lorem ipsum dolor sit amet consectetur.</strong> Lacus at neque nec proin vitae tempus eu et
@@ -41,7 +54,7 @@ neque non aliquet. Lacus sed aliquet volutpat convallis neque rutrum. Leo intege
 malesuada. Non blandit viverra magna velit ullamcorper. Feugiat quis sollicitudin sit pharetra viverra.
 Velit mollis ut iaculis leo venenatis.
 
-1. lorem asin amat
+1. lorem asin amatb 
 2. ipsum dolar
 3. lorem ipsum
             </pre>
