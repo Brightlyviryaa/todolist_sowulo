@@ -18,9 +18,9 @@ class TaskController extends Controller
     public function index()
     {
         // Get all tasks for the currently authenticated user
-        $tasks = Task::where('User ID', Auth::id())->orderBy('due_date')->get();
+        $tasks = Task::where('User ID', Auth::id())->orderBy('due date')->get();
 
-        return view('tasks.index', compact('tasks'));
+        return view('dashboard', compact('tasks'));
     }
 
     /**
