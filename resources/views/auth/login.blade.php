@@ -54,22 +54,21 @@
                 <h2 class="text-lg md:text-start text-center">By Gerda SOWULO</h2>    
             </div>    
             <p id="dateContainer" class="md:mr-4 mr-0 sm:p-5 text-lg text-center sm:mb-0 mb-4">Now: Thu, 28 Maret 2024</p>
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <button type="submit" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Register</button>
-            </form> 
+            
+            <a href="{{ route('register')}}" class="bg-[#00AFE7] text-white px-5 py-3 rounded-lg sm:p-5 text-lg">Register</a>
         </nav>
         <div class="container mx-auto mt-20 p-5 lg:px-96 lg:pt-52 lg:pb-80 lg:mt-0">
             <div class="bg-white px-8 py-4 border-2 rounded-2xl border-[#616161] drop-shadow">
                 <h1 class="font-bold text-4xl mb-4">Login</h1>
-                <form>
+                <form method="POST" action="{{route('login')}}">
+                    @csrf
                     <div class="mb-3.5">
                         <label for="email" class="block text-gray-700 mb-1 text-lg">Email</label>
-                        <input type="email" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required> 
+                        <input type="email" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" name="email" required> 
                     </div>
                     <div class="mb-3.5">
                         <label for="password" class="block text-gray-700 mb-1 text-lg">Password</label>
-                        <input type="password" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" required> 
+                        <input type="password" class="form-input w-full border border-gray-300 rounded-md p-2 drop-shadow" name="password" required> 
                     </div>
                     <div>
                         <button type="submit" class="rounded-lg bg-[#00AFE7] text-white px-5 py-3">
@@ -84,79 +83,5 @@
         </div>
     </div>
 
-    <script>
-        // Now: Thu, 28 Maret 2024
-        let date = new Date();
-        
-        const dateContainer = document.querySelector("#dateContainer");
-
-        let day
-        switch(date.getDay()){
-            case 0: 
-                day = "Minggu"
-                break
-            case 1:
-                day = "Senin"
-                break
-            case 2:
-                day = "Selasa"
-                break
-            case 3:
-                day = "Rabu"
-                break
-            case 4:
-                day = "Kamis"
-                break
-            case 5:
-                day = "Jumat"
-                break
-            case 6:
-                day = "Sabtu"
-                break                    
-        }
-
-        let month
-        switch(date.getMonth()){
-            case 0:
-                month = "Januari"
-                break
-            case 1:
-                month = "Februari"
-                break
-            case 2:
-                month = "Maret"
-                break
-            case 3:
-                month = "April"
-                break  
-            case 4:
-                month = "Mei"
-                break
-            case 5:
-                month = "Juni"
-                break
-            case 6:
-                month = "Juli"
-                break
-            case 7:
-                month = "Agustus"
-                break
-            case 8:
-                month = "September"
-                break
-            case 9:
-                month = "Oktober"
-                break
-            case 10:
-                month = "November"
-                break
-            case 11:
-                month = "Desember"         
-                break                                 
-        }
-
-        let dateString = "Now: " + day + ", " + date.getDate() + " " + month + " " + date.getFullYear();
-        dateContainer.innerHTML = dateString;
-
-    </script>
+    @include('components.dateLogic')
 @endsection
