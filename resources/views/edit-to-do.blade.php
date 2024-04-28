@@ -16,7 +16,7 @@
         <div class="container mx-auto mt-20 p-5 lg:px-96 lg:pt-52 lg:pb-80 lg:mt-0">
             <div class="bg-white px-8 pb-8 border rounded-2xl border-[#616161] drop-shadow">
 
-                <h1 class="font-bold text-4xl mb-4 mr-4">Edit Task</h1>
+                <h1 class="font-bold text-4xl mb-4 mr-4 mt-4">Edit Task</h1>
                 <form method="POST" action="{{ route('tasks.update', ['id' => $task->id]) }}" id="identifier" class="create-to-do-form">
                     @csrf
                     @method('PUT')
@@ -66,7 +66,7 @@
             theme: 'snow'
         });
 
-        quill.root.innerHTML = "{{ $task->description }}";
+        quill.root.innerHTML = "{!! $task->description !!}";
 
         var form = document.querySelector(".create-to-do-form");
         var hiddenInput = document.querySelector('#hiddenArea');

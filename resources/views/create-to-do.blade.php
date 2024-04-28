@@ -16,7 +16,7 @@
         <div class="container mx-auto mt-20 p-5 lg:mt-0 lg:px-96 lg:pb-80 lg:pt-52">
             <div class="rounded-2xl border border-[#616161] bg-white px-8 pb-8 drop-shadow">
 
-                <h1 class="mb-4 mr-4 text-4xl font-bold">Create</h1>
+                <h1 class="mb-4 mr-4 mt-4 text-4xl font-bold">Create</h1>
                 <form method="POST" action="{{ route('tasks.store') }}" id="identifier" class="create-to-do-form">
                     @csrf
                     <div class="mb-3.5">

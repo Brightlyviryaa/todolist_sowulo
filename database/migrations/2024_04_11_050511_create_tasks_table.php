@@ -15,11 +15,10 @@ return new class extends Migration
             $table->id(); //id gak perlu di ganti ganti nama table nya
             $table->timestamps();
             $table->string("name");
-            $table->string("description");
+            $table->text("description");
             $table->date("due date");
             $table->foreignId("User ID")->constrained("users");
         });
-
     }
 
     /**

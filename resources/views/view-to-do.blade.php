@@ -1,6 +1,6 @@
 @extends('layouts.base')
 @section('content')
-    <div class="container mx-auto">
+    <div class="container mx-auto ">
         <nav class="bg-white flex md:justify-between justify-center items-center mt-11 md:flex-row flex-col md:p-5">
             <div class="sm:mb-0 mb-4">
                 <h1 class="text-4xl font-bold md:text-start text-center">To-do List</h1>
@@ -13,27 +13,55 @@
             </form> 
         </nav>
         <div class="container mx-auto mt-20 p-5 lg:px-96 lg:pt-52 lg:pb-80 lg:mt-0">
-            <div class="bg-white px-8 py-4 border-2 rounded-2xl border-[#616161] drop-shadow">
-                <h1 class="font-bold text-4xl mb-4">{{ $task->name }} </h1>
-                <p class="text-sm">Open: {{ \Carbon\Carbon::parse($task['created_at'])->format('d F Y') }} </p>
-                <p class="text-sm">Due: {{ \Carbon\Carbon::parse($task['due date'])->format('d F Y') }}</p>
+            <div class="mt-6">
+                <div class="flex justify-between items-center gap-5">
+                    <div class="flex items-center gap-5">
+                        <button class="bg-black rounded-full p-2">
+                            <img src={{ asset('images/pencil.svg') }}>
+                        </button>
+                        <h1 class="text-sm">Edit Task</h1>
+                    </div>
+                </div>
+            </div>
+            <h1 class="text-4xl font-bold text-start mt-6">{{ $task->name }}</h1>
+            <p class="text-sm mt-2">Open: {{ \Carbon\Carbon::parse($task['created_at'])->format('d F Y') }}</p>
+            <p class="text-sm mt-1">Due: {{ \Carbon\Carbon::parse($task['due date'])->format('d F Y') }}</p>
+
+            <div class="mt-6">
+                <div class="flex justify-between items-center gap-5">
+                    <div class="flex items-center gap-5">
+                        <form method="POST" action="{{ route('tasks.destroy', ['id' => $task->id]) }}">
+                            @csrf
+                            <button type="submit" class="rounded-lg bg-white border border-gray-300 text-[#00AFE7] px-5 py-3">
+                                <p class="text-sm">Mark As Done</p>
+                            </button>
+                        </form>
+
+                        <form method="POST" action="{{ route('tasks.destroy', ['id' => $task->id]) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="rounded-full">
+                                <img src={{ asset('images/trash_can.svg') }}>
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
             </div>
 
-            <button type="submit" class="rounded-lg bg-white border border-gray-300 text-[#00AFE7] px-5 py-3">
-                <p class="text-sm">Mark As Done</p>
-            </button>
-            <button type="submit" class="rounded-lg bg-white border border-gray-300 text-[#00AFE7] px-5 py-3">
-                <a href="{{ route('tasks.edit', ['id' => $task->id]) }}" class="text-sm">Edit</a>
-            </button>
-            <form method="POST" action="{{ route('tasks.destroy', ['id' => $task->id]) }}">
-                @csrf
-                @method('DELETE')
-                <button type="submit"><img src={{asset("images/trash_can.svg")}}></button>
-            </form>
-              
-            <div>{!! $task->description !!}</div>
+            <span><br>{!! $task->description !!}</span>
 
-            </form>
+            <div class="col-span-1 mt-3 flex items-center justify-center">
+                <div class="px-auto rounded-[10px] bg-[#00AFE7]">
+                    <form method="GET" action="{{ route('tasks.edit', ['id' => $task->id]) }}">
+                        <button type="submit" class="rounded-lg bg-[#00AFE7] px-4 py-2 text-white">
+                            <p class="px-3 py-1 text-lg">Edit Task</p>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+
         </div>
     </div>
     </div>
